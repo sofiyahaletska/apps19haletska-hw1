@@ -5,8 +5,8 @@ import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
 
-    private final int Max_Temp = -273;
     public double[] temperatureSeries;
+    private final int MaxTemp = -273;
     public TemperatureSeriesAnalysis() {
 
     }
@@ -14,7 +14,7 @@ public class TemperatureSeriesAnalysis {
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         this.temperatureSeries = temperatureSeries;
         for (int i = 0; i < temperatureSeries.length; i++) {
-            if (temperatureSeries[i] < Max_Temp) {
+            if (temperatureSeries[i] < MaxTemp) {
                 throw new InputMismatchException();
             }
         }
@@ -34,9 +34,9 @@ public class TemperatureSeriesAnalysis {
     public double deviation() {
         if (temperatureSeries.length > 0) {
             double sum = 0;
-            double averageL = average();
+            double aveL = average();
             for (int i = 0; i < temperatureSeries.length; i++) {
-                sum += (temperatureSeries[i] - averageL)*(temperatureSeries[i] - averageL);
+                sum += (temperatureSeries[i] - aveL)*(temperatureSeries[i] - aveL);
             }
             return Math.sqrt(sum/temperatureSeries.length);
         }
