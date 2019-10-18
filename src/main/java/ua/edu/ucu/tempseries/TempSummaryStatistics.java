@@ -8,7 +8,8 @@ public class TempSummaryStatistics {
     private final double maxTemp;
 
     TempSummaryStatistics(double[] temperatureSeries) {
-        final TemperatureSeriesAnalysis ARR_TEMPERATURE = new TemperatureSeriesAnalysis(temperatureSeries);
+        final TemperatureSeriesAnalysis ARR_TEMPERATURE =
+                new TemperatureSeriesAnalysis(temperatureSeries);
         this.avgTemp = ARR_TEMPERATURE.average();
         this.devTemp = ARR_TEMPERATURE.deviation();
         this.minTemp = ARR_TEMPERATURE.min();
